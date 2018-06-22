@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>My first PHP page</h1>
 
 <?php
-echo "Hello World!";
-?>
+$servername = "mysql://mysql:3306/";
+$username = "sag";
+$password = "sag";
 
-</body>
-</html>
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?> 
